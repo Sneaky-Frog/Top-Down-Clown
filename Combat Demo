@@ -1,0 +1,53 @@
+extends Resource
+class_name TechAbilities
+
+# Factory methods for Tech class abilities
+
+static func create_basic_attack() -> Ability:
+    var ability = Ability.new()
+    ability.name = "Basic Attack"
+    ability.description = "Standard fallback strike."
+    ability.ability_type = Ability.AbilityType.ATTACK
+    ability.target_type = Ability.TargetType.ENEMY
+    ability.mana_cost = 0
+    ability.power = 10
+    ability.accuracy = 95
+    return ability
+
+static func create_zap_bolt() -> Ability:
+    var ability = Ability.new()
+    ability.name = "Zap Bolt"
+    ability.description = "Deals light tech damage to a single target."
+    ability.ability_type = Ability.AbilityType.ATTACK
+    ability.target_type = Ability.TargetType.ENEMY
+    ability.mana_cost = 5
+    ability.power = 15
+    ability.accuracy = 90
+    return ability
+
+static func create_spark() -> Ability:
+    var ability = Ability.new()
+    ability.name = "Spark"
+    ability.description = "Deals light damage, chance to stun/paralyze."
+    ability.ability_type = Ability.AbilityType.ATTACK
+    ability.target_type = Ability.TargetType.ENEMY
+    ability.mana_cost = 10
+    ability.power = 12
+    ability.accuracy = 85
+    ability.applies_status = "Stun"
+    ability.status_duration = 1
+    return ability
+
+static func create_byte_bomb() -> Ability:
+    var ability = Ability.new()
+    ability.name = "Byte Bomb"
+    ability.description = "Single target light damage, chance to burn."
+    ability.ability_type = Ability.AbilityType.ATTACK
+    ability.target_type = Ability.TargetType.ENEMY
+    ability.mana_cost = 15
+    ability.power = 20
+    ability.accuracy = 85
+    ability.applies_status = "Burn"
+    ability.status_duration = 3
+    return ability
+
